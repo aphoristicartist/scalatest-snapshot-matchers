@@ -1,4 +1,4 @@
-val ScalaVersion = "2.12.5"
+val ScalaVersion = "2.13.1"
 val Organization = "com.commodityvectors"
 
 val sharedSettings = Seq(
@@ -7,7 +7,6 @@ val sharedSettings = Seq(
   scalafmtOnCompile := true,
   parallelExecution in Test := false,
   releaseCrossBuild := true,
-  crossScalaVersions := Seq("2.11.8", ScalaVersion),
   bintrayOrganization := Some("commodityvectors"),
   bintrayRepository := "commodityvectors-releases",
   licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
@@ -34,7 +33,7 @@ lazy val core =
     .settings(name := "scalatest-snapshot-matcher-core")
     .settings(sharedSettings: _*)
     .settings(libraryDependencies ++= Seq(
-      "org.scalatest" %% "scalatest" % "3.0.5",
+      "org.scalatest" %% "scalatest" % "3.0.8",
       "com.googlecode.java-diff-utils" % "diffutils" % "1.3.0",
       "com.typesafe" % "config" % "1.3.2",
       "commons-io" % "commons-io" % "2.6" % "test"
@@ -46,7 +45,7 @@ lazy val playJson =
     .settings(sharedSettings: _*)
     .settings(
       libraryDependencies ++= Seq(
-        "com.typesafe.play" %% "play-json" % "2.6.10",
+        "com.typesafe.play" %% "play-json" % "2.7.4",
         "commons-io" % "commons-io" % "2.6" % "test"
       ))
     .dependsOn(core)
